@@ -1,0 +1,12 @@
+version: '3.9' # optional since v1.27.0
+services:
+  app:
+    container_name: example
+    image: madocker
+    build:
+      context: ./
+      dockerfile: DockerFile.Anas
+    ports:
+      - '8100:8100'
+    volumes:
+      - '.:/app'

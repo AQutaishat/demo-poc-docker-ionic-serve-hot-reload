@@ -1,0 +1,12 @@
+version: '3.9' # optional since v1.27.0
+name: ma-container
+services:
+  docker-app:
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    ports:
+      - '8100:8100'
+    volumes:
+      - .:/app
+      - /app/node_modules

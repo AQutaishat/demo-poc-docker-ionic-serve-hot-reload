@@ -1,0 +1,16 @@
+FROM node:alpine
+
+ENV PATH /app/node_modules/.bin:$PATH
+
+WORKDIR /app
+
+COPY package.json /app
+RUN npm install @angular/cli
+RUN npm install @ionic/cli
+RUN npm install
+
+
+
+EXPOSE 8100
+
+CMD ionic serve --host 0.0.0.0  --external --no-open -- --poll 200

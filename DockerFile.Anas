@@ -1,0 +1,15 @@
+FROM node:alpine
+
+WORKDIR /app
+
+RUN apk update
+RUN apk add --no-cache bash 
+RUN apk add --no-cache rsync
+
+RUN npm install @angular/cli
+RUN npm install @ionic/cli
+
+RUN npm install
+
+
+
